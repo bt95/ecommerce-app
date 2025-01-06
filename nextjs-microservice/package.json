@@ -1,0 +1,29 @@
+{
+  "name": "nextjs-microservice",
+  "version": "1.0.0",
+  "description": "A microservice for handling product inventory updates and fetching inventory details using Next.js and Drizzle ORM with PostgreSQL.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "latest",
+    "next": "latest",
+    "pg": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5",
+    "@types/pg": "^8.11.10",
+    "@types/react": "19.0.3",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "typescript": "latest"
+  },
+  "license": "MIT"
+}
