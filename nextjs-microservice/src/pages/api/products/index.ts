@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import db from "../../../db/drizzle";
-import { InventoryItem, InventoryUpdate } from "../../../types";
-import { products } from "@/db/schema";
+import { getMethodNotAllowedError } from "@/utils";
 
 export default async function productsHandler(
   req: NextApiRequest,
@@ -12,10 +11,13 @@ export default async function productsHandler(
       const products = await db.query.products.findMany();
       return res.status(200).json(products);
     } catch (error) {
-      return res.status(500).json({ message: "Error fetching products" });
+      return res.status(500).json(new Error("Error fetching products"));
     }
   } else {
-    res.setHeader("Allow", ["GET", "POST"]);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    const allowedMethods = ["GET"];
+    res.setHeader("Allow", allowedMethods);
+    return res
+      .status(405)
+      .end(getMethodNotAllowedError(req.method, allowedMethods));
   }
 }
