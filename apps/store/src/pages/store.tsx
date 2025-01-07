@@ -47,6 +47,9 @@ const Store = () => {
         return;
       }
 
+      setSelectedProduct("");
+      setQuantity(1);
+
       const response = await fetch(
         `http://localhost:3001/api/products/${selectedProduct}`,
         {
@@ -109,7 +112,11 @@ const Store = () => {
                   selectedProduct === product.id
                     ? "bg-blue-500 text-white"
                     : "bg-gray-200"
+                } ${
+                  product.inventory_count <= 0 &&
+                  "cursor-not-allowed bg-gray-400"
                 }`}
+                disabled={product.inventory_count <= 0}
                 onClick={() => setSelectedProduct(product.id)}
               >
                 {selectedProduct === product.id ? "Selected" : "Select"}
