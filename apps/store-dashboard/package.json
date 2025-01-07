@@ -10,13 +10,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "drizzle-orm": "latest",
     "next": "latest",
     "pg": "latest",
+    "postcss": "^8.4.49",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
     "@types/node": "22.10.5",
