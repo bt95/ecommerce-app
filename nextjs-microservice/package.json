@@ -4,9 +4,9 @@
   "description": "A microservice for handling product inventory updates and fetching inventory details using Next.js and Drizzle ORM with PostgreSQL.",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001 --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3001",
     "lint": "eslint ."
   },
   "dependencies": {
