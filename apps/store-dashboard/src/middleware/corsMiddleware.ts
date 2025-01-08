@@ -1,13 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Cors from "cors";
 
-// Initialize the cors middleware
 const cors = Cors({
   methods: ["GET", "POST", "HEAD"],
-  origin: "http://localhost:3000", // Allow requests from this origin
+  origin: "http://localhost:3000",
 });
 
-// Helper method to wait for a middleware to execute before continuing
 function runMiddleware(
   req: NextApiRequest,
   res: NextApiResponse,
